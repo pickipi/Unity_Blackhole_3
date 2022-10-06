@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - MagnetCollider
+  - star
+  - b_star
+  - b_starColl
+  - b_starMagnet
+  - Circle
+  - planet
   layers:
   - Default
   - TransparentFX
@@ -11,8 +18,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Circle
+  - Planet
   - 
   - 
   - 

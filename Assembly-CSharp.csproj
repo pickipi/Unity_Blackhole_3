@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\Magnet.cs" />
     <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\AppEvents.cs" />
     <Compile Include="Assets\FacebookSDK\Examples\Scripts\LogView.cs" />
+    <Compile Include="Assets\Scripts\Orbit.cs" />
     <Compile Include="Assets\FacebookSDK\Examples\Windows\FBWindowsLogsManager.cs" />
     <Compile Include="Assets\Scripts\TargetControl.cs" />
     <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\AppRequests.cs" />
@@ -99,7 +100,7 @@
     <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\Pay.cs" />
     <Compile Include="Assets\FacebookSDK\Examples\Windows\FBWindowsShareManager.cs" />
     <Compile Include="Assets\FacebookSDK\Examples\Windows\FBWindowsTournamentsManager.cs" />
-    <Compile Include="Assets\Scripts\Orbit.cs" />
+    <Compile Include="Assets\Scripts\PointerEffector.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\FacebookSDK\Plugins\Windows\x64\libcurl.dll" />

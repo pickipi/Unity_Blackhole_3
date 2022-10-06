@@ -74,7 +74,7 @@ public class gameManager : MonoBehaviour
         player.DesactivateRb();
 
         // 별 생성기
-        InvokeRepeating("makeStar", 0.0f, 0.2f); // 0초 후에 시작하여 0.2초마다 생성
+        //InvokeRepeating("makeStar", 0.0f, 0.2f); // 0초 후에 시작하여 0.2초마다 생성
 
 
         // 큰 별 생성기
@@ -82,7 +82,7 @@ public class gameManager : MonoBehaviour
     }
     void makeStar()
     {
-        Instantiate(star);
+        //Instantiate(star);
     }
 
     void makeb_Star()

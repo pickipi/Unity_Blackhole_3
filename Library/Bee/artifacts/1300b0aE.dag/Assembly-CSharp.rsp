@@ -435,6 +435,7 @@
 "Assets/Scripts/Orbit.cs"
 "Assets/Scripts/panel.cs"
 "Assets/Scripts/Player.cs"
+"Assets/Scripts/PointerEffector.cs"
 "Assets/Scripts/Spawner.cs"
 "Assets/Scripts/Star.cs"
 "Assets/Scripts/TargetControl.cs"
