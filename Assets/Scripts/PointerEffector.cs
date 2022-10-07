@@ -5,6 +5,7 @@ using UnityEngine;
 public class PointerEffector : MonoBehaviour
 {
     public Transform target;
+    public GameObject Player;
     public float orbitSpeed;
     Vector3 offSet; // 플레이어와 맞닿은 물체와의 거리
 
@@ -16,6 +17,7 @@ public class PointerEffector : MonoBehaviour
 
         transform.position = new Vector3(x, y, 0);
         //offSet = transform.position - target.position;    
+        target = GameObject.FindGameObjectWithTag("Absorber").transform;
     }
 
     // Update is called once per frame
