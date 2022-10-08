@@ -23,11 +23,6 @@ public class Collector : MonoBehaviour
     public GameObject b_star;
     public GameObject b_starCollider;
     float cameraSize;
-
-    //test - Orbit
-    public int HasOrbit;
-    public int MaxHasOrbit;
-    public GameObject[] Orbits;
     public float pushForce;
     public float moveSpeed;
 
@@ -53,10 +48,6 @@ public class Collector : MonoBehaviour
     {
         cameraSize = Camera.main.orthographicSize;
 
-        //test - Orbit
-        HasOrbit = Player.GetComponent<Player>().HasOrbit;
-        MaxHasOrbit = Player.GetComponent<Player>().maxHasOrbit;
-        Orbits = Player.GetComponent<Player>().Orbits;
         //float pushForce1 = gameManager.GetComponent<gameManager>().pushForce;
         //pushForce = pushForce1;
         moveSpeed = Player.GetComponent<Player>().moveSpeed;

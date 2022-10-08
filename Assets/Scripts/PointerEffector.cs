@@ -4,43 +4,106 @@ using UnityEngine;
 
 public class PointerEffector : MonoBehaviour
 {
-    public Transform target;
+    // public Transform target;
+    public GameObject Absorber;
+    public GameObject gameManager;
     public GameObject Player;
-    public float orbitSpeed;
-    Vector3 offSet; // 플레이어와 맞닿은 물체와의 거리
+    public GameObject Collider;
 
-    // Start is called before the first frame update
+    public float speed;
+    [HideInInspector] public Rigidbody2D rb;
+
+    // 점수 UI
+    int score;
+    public int type; // 점수 배점
+    float size;
+
+
+    // Planet 초기값 설정
     void Start()
     {
+        // Spawn Location Randomizing
         float x = Random.Range(-18.0f, 18.0f);
         float y = Random.Range(-23.0f, 23.0f);
-
         transform.position = new Vector3(x, y, 0);
-        //offSet = transform.position - target.position;    
-        target = GameObject.FindGameObjectWithTag("Absorber").transform;
+
+        // Absorber Properties
+        Absorber = GameObject.FindGameObjectWithTag("Absorber");
+        gameManager = GameObject.FindGameObjectWithTag("gameManager");
+        Player = GameObject.FindGameObjectWithTag("Player");
+        Collider = GameObject.FindGameObjectWithTag("Collider");
+
+        // Random LocalScale (Planet) and Score UI
+        type = Random.Range(1, 4);
+        if (type == 1)
+        {
+            size = 1.0f;
+            score = 3;
+
+
+        }
+        else if (type == 2)
+        {
+            size = 0.5f;
+            score = 2;
+
+
+        }
+        else
+        {
+            size = 0.2f;
+            score = 1;
+
+
+        }
+        transform.localScale = new Vector3(size, size, 0);
+
+        speed = 1.0f;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*
-        transform.position = target.position + offSet; // 둘의 거리만큼 리셋
-                                                       // transform.Rotate(new Vector3(-0.2f, -0.2f, 0) * 2);
-                                                       // transform.RotateAround(target.position, Vector3.back, orbitSpeed * Time.deltaTime * 5); // 회전을 하는 로직
-        offSet = transform.position - target.position; // 둘의 거리만큼 이동
-    */
+        
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    /*
+
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if(other.tag == "Player")
+        if(collision.tag == "Absorber")
         {
-            other.transform.position = target.position;
+            //OrbitAround();
+            //rb.mass = 0.1f;
+            //Player.GetComponent<Player>().moveSpeed += 0.1f;
+
+            Vector2 test = gameManager.GetComponent<gameManager>().direction;
+            //rb.AddForce(test * 5.0f, ForceMode2D.Impulse);
+            //rb.velocity = Vector2.zero;
+        }
+    }
+    */
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Absorber")
+        {
+            //gameManager.GetComponent<gameManager>().pushForce += 0.03f;
+            //collision.transform.SetParent(Absorber.transform);
+
+            Absorber.transform.localScale += new Vector3(0.01f, 0.01f, 0);
+            Collider.transform.localScale += new Vector3(0.001f, 0.001f, 0);
+            // Player.GetComponent<Player>().rb.mass += 0.05f;
+            gameManager.GetComponent<gameManager>().addScore(score);
         }
     }
 
-    void Orbit()
+    /*
+    void OrbitAround()
     {
-
+        transform.RotateAround(Absorber.transform.position, Vector3.down, speed * Time.deltaTime);
     }
+    */
+    
 }

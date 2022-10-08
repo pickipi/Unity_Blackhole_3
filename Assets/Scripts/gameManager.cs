@@ -10,9 +10,15 @@ public class gameManager : MonoBehaviour
     // 변수 선언 **
     public GameObject star;
     public GameObject b_star;
+
     public Text scoreText;
     public Text timeText;
+    public Text StageResult;
+    public Text TotalResult;
+    public Text StageText;
 
+    public GameObject stage;
+    public GameObject result;
     public GameObject panel;
     public GameObject Player;
     public GameObject g_field;
@@ -33,19 +39,24 @@ public class gameManager : MonoBehaviour
 
     Vector2 startPoint;
     Vector2 endPoint;
-    Vector2 direction;
+    public Vector2 direction;
     Vector2 force;
     float distance;
 
     int totalScore = 0; // 점수 UI
     // 변수 선언 **
 
+    // Stage Management
+    public int totalPoint;
+    public int stagePoint;
+    public int stageIndex;
+    public GameObject[] Stages;
+
 
     #region Singleton class: gamaManager
 
     // 점수UI
     public static gameManager I;
-    //public static gameManager Instance;
 
     void Awake()
     {
@@ -65,6 +76,43 @@ public class gameManager : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         limit = 99.0f;
+        totalScore = 0;
+    }
+
+    // 스테이지 변경 시 가져갈 초기값
+    void StartStage()
+    {
+        Time.timeScale = 1.0f;
+        // totalScore = 0;
+    }
+
+    public void NextStage()
+    {
+        // Change Stage
+        if (stageIndex < Stages.Length - 1)
+        {
+            stage.SetActive(false);
+            Stages[stageIndex].SetActive(false);
+            stageIndex++;
+
+            StageResult.text = totalScore.ToString();
+
+            Stages[stageIndex].SetActive(true);
+            StageText.text = (stageIndex+1).ToString();
+            StartStage();
+        }
+        // Game Clear
+        else
+        {
+            stage.SetActive(false);
+            result.SetActive(true);
+            Time.timeScale = 0.0f; // 유니티 시간 멈춤
+            Debug.Log("Game Clear !");
+        }
+
+        // Calculate Point
+        totalPoint += totalScore;
+        TotalResult.text = totalPoint.ToString();
         totalScore = 0;
     }
     void Start()
@@ -122,6 +170,8 @@ public class gameManager : MonoBehaviour
             Time.timeScale = 0.0f; // Unity 모든 시간 Stop
         }
         timeText.text = limit.ToString("N2");
+
+        
     }
 
     void OnDragStart()
@@ -162,6 +212,18 @@ public class gameManager : MonoBehaviour
     {
         totalScore += score;
         scoreText.text = totalScore.ToString();
+
+        // 점수 기준 충족되면 다음 스테이지 이동
+        if (totalScore >= 30)
+        {
+            stage.SetActive(true);
+            Time.timeScale = 0.0f;
+            
+            if(stageIndex == 2)
+            {
+                NextStage();
+            }
+        }
     }
 
     /*
@@ -175,7 +237,6 @@ public class gameManager : MonoBehaviour
     // 다시하기 구현
     public void retry()
     {
-
         SceneManager.LoadScene("myproject");
     }
 }

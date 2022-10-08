@@ -115,6 +115,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   b_star: {fileID: 4539826630137416968}
+  panel: {fileID: 0}
+  gameManager: {fileID: 0}
   rb: {fileID: 0}
 --- !u!1 &4539826630137416968
 GameObject:
@@ -195,7 +197,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 06c90ff814c8deb48bfdb9c879f8c50d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -261,6 +263,7 @@ MonoBehaviour:
   influenceRange: 0
   intensity: 0
   distanceToPlayer: 0
+  hasTarget: 0
   type: 0
 --- !u!95 &4793828168914626274
 Animator:
