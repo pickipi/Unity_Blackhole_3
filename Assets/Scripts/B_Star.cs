@@ -7,7 +7,8 @@ using Random = UnityEngine.Random; // Random 모호한 참조 해결
 
 public class B_Star : MonoBehaviour
 {
-    public GameObject star;
+    public GameObject panel;
+    public GameObject gameManager;
 
     //test
     [HideInInspector] public CircleCollider2D col;
@@ -52,6 +53,9 @@ public class B_Star : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        panel = GameObject.FindGameObjectWithTag("panel");
+        gameManager = GameObject.FindGameObjectWithTag("gameManager");
+
         // test - 별 중력장
         b_starBody = b_star.GetComponent<Rigidbody2D>();
         //
@@ -65,16 +69,16 @@ public class B_Star : MonoBehaviour
         type = Random.Range(1, 4);
         if (type == 1)
         {
-            size = 0.5f;
+            size = 1.5f;
 
         }
         else if (type == 2)
         {
-            size = 1.5f;
+            size = 2.5f;
         }
         else
         {
-            size = 3.5f;
+            size = 4.0f;
         }
         transform.localScale = new Vector3(size, size, 0);
     }

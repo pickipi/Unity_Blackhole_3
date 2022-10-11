@@ -81,5 +81,20 @@ public class Player : MonoBehaviour
     {
 
     }
+
+
+    /*
+    // 플레이어가 블랙홀에 닿았을때 retry()
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if ((GameObject.FindGameObjectWithTag("Player").transform.localScale.x + 1.5f < GameObject.FindGameObjectWithTag("b_star").transform.localScale.x
+            && GameObject.FindGameObjectWithTag("Player").transform.localScale.y + 1.5f < GameObject.FindGameObjectWithTag("b_star").transform.localScale.y))
+        {
+            panel.SetActive(true); // 재시작 패널 활성화
+            Time.timeScale = 0.0f; // Unity 모든 시간 Stop
+                                   // gameManager.I.retry();
+        }
+    }
+    */
 }
 

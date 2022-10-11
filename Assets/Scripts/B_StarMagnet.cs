@@ -12,6 +12,12 @@ public class B_StarMagnet : MonoBehaviour
     [HideInInspector] public Rigidbody2D rb;
     Vector2 force;
 
+    private void Start()
+    {
+        panel = GameObject.FindGameObjectWithTag("panel");
+        gameManager = GameObject.FindGameObjectWithTag("gameManager");
+    }
+
     // OnTriggerStay = 흡수되는 로직
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -43,6 +49,8 @@ public class B_StarMagnet : MonoBehaviour
 
         }
     }
+
+
 }
     
     

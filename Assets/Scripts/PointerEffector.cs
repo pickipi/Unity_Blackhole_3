@@ -21,7 +21,7 @@ public class PointerEffector : MonoBehaviour
     // Á¡¼ö UI
     int score;
     public int type; // Á¡¼ö ¹èÁ¡
-    float size;
+    public float size;
 
 
     // Planet ÃÊ±â°ª ¼³Á¤
@@ -96,27 +96,58 @@ public class PointerEffector : MonoBehaviour
         {
             //gameManager.GetComponent<gameManager>().pushForce += 0.03f;
             //collision.transform.SetParent(Absorber.transform);
-            if(size == 1)
+            if (size == 1)
             {
+                Debug.Log("size 1 Çà¼º È¹µæ");
                 Absorber.transform.localScale += new Vector3(0.01f, 0.01f, 0);
                 Collider.transform.localScale += new Vector3(0.001f, 0.001f, 0);
 
+                // Ä«¸Þ¶ó ÁÜ ¾Æ¿ô ÇÑ°èÄ¡ ¼³Á¤
+                if (Camera.main.orthographicSize < 20.0f)
+                {
+                    Camera.main.orthographicSize += 0.35f;
+                    Debug.Log("Ä«¸Þ¶ó ÁÜ ¾Æ¿ô");
+                }
+
             }
 
-            else if(size == 2)
+            else if (size == 2)
             {
+                Debug.Log("size 2 Çà¼º È¹µæ");
                 Absorber.transform.localScale += new Vector3(0.02f, 0.02f, 0);
                 Collider.transform.localScale += new Vector3(0.004f, 0.004f, 0);
+
+                // Ä«¸Þ¶ó ÁÜ ¾Æ¿ô ÇÑ°èÄ¡ ¼³Á¤
+                if (Camera.main.orthographicSize < 20.0f)
+                {
+                    Camera.main.orthographicSize += 0.5f;
+                    Debug.Log("Ä«¸Þ¶ó ÁÜ ¾Æ¿ô");
+                }
             }
 
             else
             {
+                Debug.Log("size 3 Çà¼º È¹µæ");
                 Absorber.transform.localScale += new Vector3(0.04f, 0.04f, 0);
                 Collider.transform.localScale += new Vector3(0.01f, 0.01f, 0);
-            }
 
+                // Ä«¸Þ¶ó ÁÜ ¾Æ¿ô ÇÑ°èÄ¡ ¼³Á¤
+                if (Camera.main.orthographicSize < 20.0f)
+                {
+                    Camera.main.orthographicSize += 0.7f;
+                    Debug.Log("Ä«¸Þ¶ó ÁÜ ¾Æ¿ô");
+                }
+            }
+            /*
+            // Ä«¸Þ¶ó ÁÜ ¾Æ¿ô ÇÑ°èÄ¡ ¼³Á¤
+            if (Camera.main.orthographicSize < 20.0f &&
+                (Camera.main.transform.position.x > -4.5 && Camera.main.transform.position.x < 4.5))
+            {
+                Camera.main.orthographicSize += 0.35f;
+            }
+            */
             // Player.GetComponent<Player>().rb.mass += 0.05f;
-            gameManager.GetComponent<gameManager>().addScore(score);
+            // gameManager.GetComponent<gameManager>().addScore(score);
         }
     }
 

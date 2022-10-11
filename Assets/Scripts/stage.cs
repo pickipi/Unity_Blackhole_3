@@ -16,8 +16,10 @@ public class stage : MonoBehaviour
         
     }
 
+    /* 무한플레이를 위해 OFF
     public void next()
     {
         gameManager.I.NextStage();
     }
+    */
 }

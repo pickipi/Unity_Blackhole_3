@@ -9,6 +9,12 @@ public class B_StarCollector : MonoBehaviour
     public GameObject panel;
     public GameObject gameManager;
 
+    private void Start()
+    {
+        panel = GameObject.FindGameObjectWithTag("panel");
+        gameManager = GameObject.FindGameObjectWithTag("gameManager");
+    }
+
     // private -> public 변경 (2022-09-29 13:41)
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,17 +26,24 @@ public class B_StarCollector : MonoBehaviour
         }
 
         // Collector와 반대의 조건 달기
-        if (collision.gameObject.tag == "star")
+        if (collision.gameObject.tag == "planet")
         {
+            Debug.Log("B_StarCollector의 OnTriggerEnter 실행");
             Destroy(collision.gameObject);
 
             // '적 블랙홀 성장중' 로직
             GameObject.FindGameObjectWithTag("b_star").transform.localScale += new Vector3(0.02f, 0.02f, 0);
         }
 
+        
         // OnTriggerEnter = 닿았을때 로직
-        if (collision.gameObject.TryGetComponent<Player>(out Player player))
+        if (collision.gameObject.tag == "Player")
         {
+            Debug.Log("플레이어가 블랙홀에 흡수됨 - END");
+            Destroy(collision);
+
+            GameObject.FindGameObjectWithTag("b_star").transform.localScale += new Vector3(0.5f, 0.5f, 0);
+
             panel.SetActive(true); // 재시작 패널 활성화
             Time.timeScale = 0.0f; // Unity 모든 시간 Stop
                                    // gameManager.I.retry();

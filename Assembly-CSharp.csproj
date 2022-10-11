@@ -83,7 +83,6 @@
     <Compile Include="Assets\FacebookSDK\Examples\Windows\FBWindowsLogsManager.cs" />
     <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\AppRequests.cs" />
     <Compile Include="Assets\FacebookSDK\Examples\Scripts\MenuBase.cs" />
-    <Compile Include="Assets\Scripts\Star.cs" />
     <Compile Include="Assets\Scripts\B_Star.cs" />
     <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\UploadToMediaLibrary.cs" />
     <Compile Include="Assets\FacebookSDK\Examples\Scripts\ConsoleBase.cs" />

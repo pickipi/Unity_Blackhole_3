@@ -14,8 +14,10 @@ public class Spawner : MonoBehaviour
     void Spawnitem()
     {
         GameObject spawnedObject;
+        spawnedObject = Instantiate(items[Random.Range(0, items.Length)]);
 
-        if(gameManager.I.stageIndex == 0)
+        /* 각 스테이지 생성될 장애물 조건
+        if (gameManager.I.stageIndex == 0)
         {
             spawnedObject = Instantiate(items[Random.Range(0, 5)]);
         }
@@ -29,6 +31,7 @@ public class Spawner : MonoBehaviour
         {
             spawnedObject = Instantiate(items[Random.Range(12, items.Length)]);
         }
+        */
     }
     // Update is called once per frame
     void Update()

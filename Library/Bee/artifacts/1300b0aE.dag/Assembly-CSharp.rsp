@@ -443,7 +443,6 @@
 "Assets/Scripts/result.cs"
 "Assets/Scripts/Spawner.cs"
 "Assets/Scripts/stage.cs"
-"Assets/Scripts/Star.cs"
 "Assets/Scripts/Trajectory.cs"
 -langversion:9.0
 

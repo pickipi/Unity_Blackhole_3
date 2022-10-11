@@ -8,6 +8,7 @@ public class Absorber : MonoBehaviour
     public GameObject gameManager;
     public GameObject Player;
     public GameObject Collider;
+    float size;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,8 @@ public class Absorber : MonoBehaviour
         gameManager = GameObject.FindGameObjectWithTag("gameManager");
         Player = GameObject.FindGameObjectWithTag("Player");
         Collider = GameObject.FindGameObjectWithTag("Collider");
+        size = gameObject.GetComponent<PointerEffector>().size;
+        
     }
 
     // Update is called once per frame
@@ -24,7 +27,7 @@ public class Absorber : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "planet")
         {

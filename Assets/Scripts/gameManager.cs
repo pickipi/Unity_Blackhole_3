@@ -80,6 +80,7 @@ public class gameManager : MonoBehaviour
         totalScore = 0;
     }
 
+    /*
     // 스테이지 변경 시 가져갈 초기값
     void StartStage()
     {
@@ -124,6 +125,7 @@ public class gameManager : MonoBehaviour
         TotalResult.text = totalPoint.ToString();
         totalScore = 0;
     }
+    */
     void Start()
     {
         initGame(); // 시작할때마다 initGame 호출로 'time, score' 초기화로 시작
@@ -170,7 +172,8 @@ public class gameManager : MonoBehaviour
             OnDrag();
         }
 
-        // 시간 관련 코드
+        /*
+        // 시간 관련 코드 - 무한플레이를 위해 OFF
         limit -= Time.deltaTime; // 프레임마다 시간이 떨어짐
         if (limit < 0)
         {
@@ -179,7 +182,7 @@ public class gameManager : MonoBehaviour
             Time.timeScale = 0.0f; // Unity 모든 시간 Stop
         }
         timeText.text = limit.ToString("N2");
-
+        */
         
     }
 
@@ -216,6 +219,14 @@ public class gameManager : MonoBehaviour
     }
 
 
+    // 다시하기 구현
+    public void retry()
+    {
+        SceneManager.LoadScene("myproject");
+    }
+
+    /*
+    // 무한플레이를 위해 OFF
     // 점수 UI
     public void addScore(int score)
     {
@@ -234,6 +245,7 @@ public class gameManager : MonoBehaviour
             }
         }
     }
+    */
 
     /*
     public void minusScore(int score)
@@ -243,9 +255,4 @@ public class gameManager : MonoBehaviour
     }
     */
 
-    // 다시하기 구현
-    public void retry()
-    {
-        SceneManager.LoadScene("myproject");
-    }
 }
