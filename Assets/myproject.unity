@@ -919,6 +919,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1766681870, guid: 8e724265cff96f64eb8deec9d680cc54, type: 3}
+      propertyPath: panel
+      value: 
+      objectReference: {fileID: 610928164}
+    - target: {fileID: 1766681870, guid: 8e724265cff96f64eb8deec9d680cc54, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1587314537}
     - target: {fileID: 1827157764, guid: 8e724265cff96f64eb8deec9d680cc54, type: 3}
       propertyPath: panel
       value: 
@@ -927,10 +935,6 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1587314537}
-    - target: {fileID: 4539826629040413444, guid: 8e724265cff96f64eb8deec9d680cc54, type: 3}
-      propertyPath: m_TagString
-      value: b_starMagnet
-      objectReference: {fileID: 0}
     - target: {fileID: 4539826630137416968, guid: 8e724265cff96f64eb8deec9d680cc54, type: 3}
       propertyPath: m_Name
       value: b_star

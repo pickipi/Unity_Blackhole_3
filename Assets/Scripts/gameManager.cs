@@ -135,7 +135,7 @@ public class gameManager : MonoBehaviour
 
 
         // 큰 별 생성기
-        InvokeRepeating("makeb_Star", 3.0f, 4.0f); // 3초 후에 시작하여 4초마다 생성
+        InvokeRepeating("makeb_Star", 3.0f, 3.0f); // 3초 후에 시작하여 4초마다 생성
     }
     void makeStar()
     {

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1827157764}
   m_Layer: 0
   m_Name: MagnetCollider
-  m_TagString: Untagged
+  m_TagString: b_starMagnet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -347,6 +347,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62cf370715e76ea44a09171bbc4d822e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  b_star: {fileID: 4539826630137416968}
+  panel: {fileID: 0}
+  gameManager: {fileID: 0}
 --- !u!212 &319668201
 SpriteRenderer:
   m_ObjectHideFlags: 0

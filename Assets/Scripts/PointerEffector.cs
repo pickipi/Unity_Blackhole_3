@@ -42,14 +42,14 @@ public class PointerEffector : MonoBehaviour
         type = Random.Range(1, 4);
         if (type == 1)
         {
-            size = 2.0f;
+            size = 1.5f;
             score = 3;
 
 
         }
         else if (type == 2)
         {
-            size = 1.2f;
+            size = 1.0f;
             score = 2;
 
 
