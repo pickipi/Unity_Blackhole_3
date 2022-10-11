@@ -22,8 +22,9 @@ public class gameManager : MonoBehaviour
     public GameObject panel;
     public GameObject Player;
     public GameObject g_field;
+    public GameObject goal;
 
-    float limit = 99.0f; // time Text
+    float limit = 60.0f; // time Text
 
     Camera cam;
 
@@ -75,7 +76,7 @@ public class gameManager : MonoBehaviour
     void initGame()
     {
         Time.timeScale = 1.0f;
-        limit = 99.0f;
+        limit = 60.0f;
         totalScore = 0;
     }
 
@@ -101,6 +102,14 @@ public class gameManager : MonoBehaviour
             StageText.text = (stageIndex+1).ToString();
             StartStage();
         }
+
+        // test - 마지막 스테이지 피버타임 
+        //else if(stageIndex == 2)
+        //{
+        //    StartStage();
+        //    goal.SetActive(false);
+        //}
+
         // Game Clear
         else
         {

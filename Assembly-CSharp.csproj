@@ -70,6 +70,7 @@
     <Compile Include="Assets\FacebookSDK\Examples\Windows\FBWindowsInitManager.cs" />
     <Compile Include="Assets\Scripts\gameManager.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
+    <Compile Include="Assets\Scripts\result.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\FacebookSDK\Examples\Windows\FBWindowsFriendsManager.cs" />
     <Compile Include="Assets\FacebookSDK\Examples\Windows\FBWindowsPhysicalGamepadManager.cs" />
@@ -86,10 +87,13 @@
     <Compile Include="Assets\Scripts\B_Star.cs" />
     <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\UploadToMediaLibrary.cs" />
     <Compile Include="Assets\FacebookSDK\Examples\Scripts\ConsoleBase.cs" />
+    <Compile Include="Assets\Scripts\Absorber.cs" />
     <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\TournamentsMenu.cs" />
+    <Compile Include="Assets\Scripts\Effect.cs" />
     <Compile Include="Assets\Scripts\ICollectible.cs" />
     <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\DialogShare.cs" />
     <Compile Include="Assets\FacebookSDK\Examples\Windows\FBWindowsSoftKeyboardManager.cs" />
+    <Compile Include="Assets\Scripts\stage.cs" />
     <Compile Include="Assets\FacebookSDK\Examples\Windows\FBWindowsExampleTabsManager.cs" />
     <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\GraphRequest.cs" />
     <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\AccessTokenMenu.cs" />
@@ -98,10 +102,6 @@
     <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\Pay.cs" />
     <Compile Include="Assets\FacebookSDK\Examples\Windows\FBWindowsShareManager.cs" />
     <Compile Include="Assets\FacebookSDK\Examples\Windows\FBWindowsTournamentsManager.cs" />
-    <Compile Include="Assets\Scripts\Effect.cs" />
-    <Compile Include="Assets\Scripts\Absorber.cs" />
-    <Compile Include="Assets\Scripts\result.cs" />
-    <Compile Include="Assets\Scripts\stage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\FacebookSDK\Plugins\Windows\x64\libcurl.dll" />

@@ -13,6 +13,11 @@ public class PointerEffector : MonoBehaviour
     public float speed;
     [HideInInspector] public Rigidbody2D rb;
 
+    // SetTarget
+    bool hasTarget;
+    Vector3 targetPosition;
+    float moveSpeed = 2.0f;
+
     // 점수 UI
     int score;
     public int type; // 점수 배점
@@ -37,28 +42,28 @@ public class PointerEffector : MonoBehaviour
         type = Random.Range(1, 4);
         if (type == 1)
         {
-            size = 1.0f;
+            size = 2.0f;
             score = 3;
 
 
         }
         else if (type == 2)
         {
-            size = 0.5f;
+            size = 1.2f;
             score = 2;
 
 
         }
         else
         {
-            size = 0.2f;
+            size = 0.7f;
             score = 1;
 
 
         }
         transform.localScale = new Vector3(size, size, 0);
 
-        speed = 1.0f;
+        speed = 0.5f;
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -91,9 +96,25 @@ public class PointerEffector : MonoBehaviour
         {
             //gameManager.GetComponent<gameManager>().pushForce += 0.03f;
             //collision.transform.SetParent(Absorber.transform);
+            if(size == 1)
+            {
+                Absorber.transform.localScale += new Vector3(0.01f, 0.01f, 0);
+                Collider.transform.localScale += new Vector3(0.001f, 0.001f, 0);
 
-            Absorber.transform.localScale += new Vector3(0.01f, 0.01f, 0);
-            Collider.transform.localScale += new Vector3(0.001f, 0.001f, 0);
+            }
+
+            else if(size == 2)
+            {
+                Absorber.transform.localScale += new Vector3(0.02f, 0.02f, 0);
+                Collider.transform.localScale += new Vector3(0.004f, 0.004f, 0);
+            }
+
+            else
+            {
+                Absorber.transform.localScale += new Vector3(0.04f, 0.04f, 0);
+                Collider.transform.localScale += new Vector3(0.01f, 0.01f, 0);
+            }
+
             // Player.GetComponent<Player>().rb.mass += 0.05f;
             gameManager.GetComponent<gameManager>().addScore(score);
         }
@@ -105,5 +126,21 @@ public class PointerEffector : MonoBehaviour
         transform.RotateAround(Absorber.transform.position, Vector3.down, speed * Time.deltaTime);
     }
     */
-    
+
+    // SetTarget
+    private void FixedUpdate()
+    {
+        if (hasTarget)
+        {
+            Vector2 targetDirection = (targetPosition - transform.position).normalized;
+            rb.velocity = new Vector2(targetDirection.x, targetDirection.y) * moveSpeed;
+        }
+
+    }
+
+    public void SetTarget(Vector3 position)
+    {
+        targetPosition = position;
+        hasTarget = true;
+    }
 }
