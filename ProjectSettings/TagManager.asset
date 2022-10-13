@@ -15,6 +15,8 @@ TagManager:
   - gameManager
   - Collider
   - panel
+  - planet2
+  - planet3
   layers:
   - Default
   - TransparentFX

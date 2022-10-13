@@ -29,7 +29,7 @@ public class Absorber : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "planet")
+        if(collision.gameObject.tag == "planet" && collision.gameObject.tag == "planet2" && collision.gameObject.tag == "planet3")
         {
             
         }

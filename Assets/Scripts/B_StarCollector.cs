@@ -9,7 +9,7 @@ public class B_StarCollector : MonoBehaviour
     public GameObject panel;
     public GameObject gameManager;
 
-    private void Start()
+    void Start()
     {
         panel = GameObject.FindGameObjectWithTag("panel");
         gameManager = GameObject.FindGameObjectWithTag("gameManager");
@@ -26,7 +26,7 @@ public class B_StarCollector : MonoBehaviour
         }
 
         // Collector와 반대의 조건 달기
-        if (collision.gameObject.tag == "planet")
+        if (collision.gameObject.tag == "planet" && collision.gameObject.tag == "planet2" && collision.gameObject.tag == "planet3")
         {
             Debug.Log("B_StarCollector의 OnTriggerEnter 실행");
             Destroy(collision.gameObject);
@@ -40,13 +40,13 @@ public class B_StarCollector : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Debug.Log("플레이어가 블랙홀에 흡수됨 - END");
-            Destroy(collision);
-
-            GameObject.FindGameObjectWithTag("b_star").transform.localScale += new Vector3(0.5f, 0.5f, 0);
-
             panel.SetActive(true); // 재시작 패널 활성화
             Time.timeScale = 0.0f; // Unity 모든 시간 Stop
                                    // gameManager.I.retry();
+
+            GameObject.FindGameObjectWithTag("b_star").transform.localScale += new Vector3(0.5f, 0.5f, 0);
+
+           
 
             //if ((GameObject.FindGameObjectWithTag("MagnetCollider").transform.localScale.x + 1.5f < GameObject.FindGameObjectWithTag("b_star").transform.localScale.x
             //    && GameObject.FindGameObjectWithTag("MagnetCollider").transform.localScale.y + 1.5f < GameObject.FindGameObjectWithTag("b_star").transform.localScale.y))

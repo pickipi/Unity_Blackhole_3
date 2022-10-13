@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject[] items;
-    
+    public GameObject[] items; 
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +13,19 @@ public class Spawner : MonoBehaviour
     void Spawnitem()
     {
         GameObject spawnedObject;
+
         spawnedObject = Instantiate(items[Random.Range(0, items.Length)]);
+        
+        // 우주 장애물 스폰 조건문
+        //for(int i = 0; i < items.Length; i++){
+        //{
+        //        if(items[i].gameObject.name == "planet (6)")
+        //        {
+                    
+        //        }
+        //}
+
+        
 
         /* 각 스테이지 생성될 장애물 조건
         if (gameManager.I.stageIndex == 0)
