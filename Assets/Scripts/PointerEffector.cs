@@ -77,13 +77,13 @@ public class PointerEffector : MonoBehaviour
 
         if (gameObject.tag == "planet2")
         {
-            size = 0.025f;
+            size = 0.05f;
             score = 4;
         }
 
         else if (gameObject.tag == "planet3")
         {
-            size = 0.05f;
+            size = 0.025f;
             score = 5;
         }
 
