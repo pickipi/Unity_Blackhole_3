@@ -1,0 +1,35 @@
+# ===============================================================================
+# Unity-related files to ignore
+# ===============================================================================
+
+# Unity-generated files
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+
+# Visual Studio-related files
+.vs/
+*.csproj
+*.sln
+*.unityproj
+
+# Rider-related files
+.idea/
+
+# macOS-related files
+.DS_Store
+
+# ReSharper-related files
+_ReSharper/
+*.ReSharper
+
+# ===============================================================================
+# Optional: Add other files to ignore
+# ===============================================================================
+
+# Packages
+Packages/
+Manifest.json
