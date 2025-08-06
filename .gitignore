@@ -33,3 +33,8 @@ _ReSharper/
 # Packages
 Packages/
 Manifest.json
+
+# etc
+Recordings/
+Library/PackageCache/
+Library/BurstCache/
