@@ -1,2 +1,19 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Unity 관련 파일들을 언어 통계에서 제외
+# C# 에셋 파일 (C# 스크립트 외에 에셋으로 처리될 수 있는 것)
+*.unitypackage linguist-vendored
+
+# 빌드 및 내부 파일 (이미 .gitignore에 있지만, 혹시 모를 경우를 대비)
+Library/ linguist-vendored
+Temp/ linguist-vendored
+Obj/ linguist-vendored
+Build/ linguist-vendored
+Builds/ linguist-vendored
+Logs/ linguist-vendored
+
+# 일부 Unity 패키지 관련 C# 파일 (이름에 따라 조정)
+# 만약 PackageCache 등에 커밋된 C# 파일이 있다면, 해당 경로를 정확히 지정
+# 예시: Packages/**/*.cs linguist-vendored
+# 예시: Assets/Plugins/**/*.cs linguist-vendored
